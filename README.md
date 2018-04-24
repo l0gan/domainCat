@@ -1,3 +1,4 @@
+```
                                             ooooo$oo
                                          oo$$$$$$$$$$$o
                            """"oooo    $$$$$$$$$$$$$$$$
@@ -54,6 +55,7 @@ ooo$oooooo       "$$$$$$$$$$$$$""      o"      oo$$""""""""$o  "
                                "                           """"""""$$$$$$$$
                               o                           o            ""$$
                               "                           "               "
+```
 # domainCat
 Domain Categorization Checking
 
