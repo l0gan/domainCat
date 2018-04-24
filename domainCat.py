@@ -1,0 +1,140 @@
+from argparse import ArgumentParser
+import argparse
+import sys
+from modules import *
+
+parser = ArgumentParser(description='Domain Categorization Checking')
+parser.add_argument('--domain', '-d', help='Domain name to lookup')
+parser.add_argument('--service', '-s', nargs='?', const='a', help='Service to check Categorization against (Defaults to ALL) (a (ALL), b (Bluecoat), f (Fortiguard), i (IBM xForce), m (McAfee TrustedForce), w (WebSense), g (Google SafeBrowsing), p (PhishTank), c (Cisco Talos))')
+
+class domainCat:
+
+    def run(self, domain):
+        if args.service == 'b':
+            self.bluecoatCheck(domain)
+        elif args.service == 'f':
+            self.fortiguardCheck(domain)
+        elif args.service == 'i':
+            self.ibmCheck(domain)
+        elif args.service == 'm':
+            self.trustedsourceCheck(domain)
+        elif args.service == 'w':
+            self.websenseCheck(domain)
+        elif args.service == 'g':
+            self.googleCheck(domain)
+        elif args.service == 'p':
+            self.phishtankCheck(domain)
+        elif args.service == 'c':
+            self.ciscoCheck(domain)
+        elif args.service == 'a':
+            self.bluecoatCheck(domain)
+            self.fortiguardCheck(domain)
+            self.ibmCheck(domain)
+            self.trustedsourceCheck(domain)
+            self.websenseCheck(domain)
+            self.googleCheck(domain)
+            self.phishtankCheck(domain)
+            self.ciscoCheck(domain)
+
+    def trustedsourceCheck(self, domain):
+        print "\033[1;34m[*] Targeting McAfee Trustedsource\033[0;0m"
+        ts = trustedsource.TrustedSource()
+        ts.check_category(domain)
+
+    def bluecoatCheck(self, domain):
+        print "\033[1;34m[*] Targeting Bluecoat WebPulse\033[0;0m"
+        b = bluecoat.Bluecoat()
+        b.check_category(domain)
+
+    def ibmCheck(self, domain):
+        print "\033[1;34m[*] Targeting IBM Xforce\033[0;0m"
+        xf = ibmxforce.IBMXforce()
+        xf.checkIBMxForce(domain)
+
+    def fortiguardCheck(self, domain):
+        print "\033[1;34m[*] Targeting Fortiguard\033[0;0m"
+        xf = fortiguard.Fortiguard()
+        xf.check_category(domain)
+
+    def websenseCheck(self, domain):            
+        print "\033[1;34m[*] Targeting Websense\033[0;0m"
+        xf = websense.Websense()
+        xf.check_category(domain)
+
+    def googleCheck(self, domain):
+        print "Coming Soon"
+
+    def phishtankCheck(self, domain):
+        print "Coming Soon"
+
+    def ciscoCheck(self, domain):
+        print "Coming Soon"
+
+    def asciiArt(self):
+        print('''                                            ooooo$oo
+                                         oo$$$$$$$$$$$o
+                           """"oooo    $$$$$$$$$$$$$$$$
+                               " """$$$$$o$$$$$""$$$$$"
+               ooo o      ooooo      "   o$$$   o$$$$$
+               " ooo $oo$$$$$$$$$$$oo    ""    o$$$$"
+        ooooooo$"" $$$""        """$$$o     $$$$$$$
+    oo$$$$$""""ooo$""                ""       o$$$$
+   $$$$$$$$  oo$$$"       ooo$ooo          o$$$$$$$
+   ""$$$$oo"""""        o$$$$$$$$$$ooo   o$""""   "$
+       ""              $$$$""      """"            $$
+       o$$           o$$$                o o  o    $$$  o$"
+        o$         $$$$               ooo "o$ $$oo$$$$$  o$"
+        $ oooo$o$$$$$$"        oo$$$$$$$$$$oo$$$$$$o$" o$"
+        $$$      "" "         $$$$""""$$$ "$$$        $  ooo$$$""""
+       o$"                  o$$"       $"   "         ""   $"
+        $$   oo       o    $$" oo """                       """oooo
+         $oo$$$$oo    "  o$$$$$o " o                             o$$$o
+         "$$$$"  "$$$$$$""""                                 "$o
+         $$$"      ""$$o oo                 $ "                 "$o
+     ooo   $"$o oo$ o$$$"""""""$$o      """$$$o              $o""""$$o
+       """"$$ ""$"o$$""   oooo "$$o        "  "               "o
+    "  oooo "    $$" ooo$$$$$$oo$$$       o        ooooo   oo  ""oo
+    oo$"""       $$o$$$$$$$$$$$$$"       $"       $$$$$$$$o$ "$o  "
+ooo$oooooo       "$$$$$$$$$$$$$""      o"      oo$$""""""""$o  "
+ "     $$$"        "$$$$$$$$$""       o        "$$        o$$o
+     oo"" o o    oo   """"        o ""        o o$o    o$$$$$$$
+   o$$o"" "$"      $ooo       o$""           o$$$"   o$$$$$$$$$o
+   "     oo            " """ "             o"$$$"  o$$$""""    $$o
+        o$o$"  o                         o$  $$o  o$$"          $$
+        ""    $" oo  o o o          oooo$$"    $  $"          oo$$$
+             o$o$$$oo"oo ""$$$o$$$$$$$$"       $ ""        o$$$$$$$$o
+             $$$$$$$$$$ooo  """""""""          $o$o     oo$$$$$$$$"$$o
+             "$$$$$$$$$$$                     $"o$$   o$$$$$$$$""   $$o
+              $     "$ $$o$ooo$$$$o           " $$"  "$$$$""         $$
+             $"    oo$o$$$"""      "$$o          oo$   $             "$
+             $"   o""" "$o            $o        "$ $oo$$$             $$
+            o$$$$$       $$             "$o        $""" $$o$$$$$$$$$$$$$$o
+            $$$$$$       $o               "$o      $oo  $$$$$$""$""$"$"$$$$
+           "$$$" $$oooo$$"                  $$$o      ooo$$            $$$
+            $"  $$ ""$$                    oo "$$$ooo$$$$$$$$$$$$$oo    $$
+            $   $    $"      o          $$$  ""$$$$  $$$$$$$$oo """$$$$o$$$
+           $$  $$   $$      $$         $$""$o  $$$$  "$$$  $$$$o   "$$$$$$$
+           $$$$$$$$ $$     o$$       $$    "$$ "$"     $$$    "$$     "$$$$
+           $$""   $$$$o     $$       $"     $$ $$      $$$$    "$$     $$$$
+          """  oo$$$ "$    o$$o      $"     $$ o$"     $$$$     ""$    "$$$
+          $    $$$$$o "$o o$""$o    $$     o"  $$oo    $$$$       $      $$"
+          $   o$  "$$oo""""   ""$oo$"      "oo"""""""o$$$$o        o      ""
+          $   $$   "$$$$oo$o            o o$$"         $" $$$oo    $      $
+         o$   "$o    """"$$"""$"""""""""""""           $$$"""""" oo""  oo$"
+         $$ o  $$o     o$$"   $                        """       ""  $"$$$
+          "$$$o$$$$oooo""    o$                         $o"$            $$o
+            "$o$""$" "       $$$                           ooo$oo$$$$$$$$$$
+                               "                           """"""""$$$$$$$$
+                              o                           o            ""$$
+                              "                           "               "
+     domainCat - Domain Categorization Discovery at it's finest
+     written by: l0gan''')
+
+if __name__ == "__main__":
+    args = parser.parse_args()
+    domainCat().asciiArt()
+    #domain = raw_input("[*] Enter Domain name to check Categorization on: ")
+    domain = args.domain
+    service = args.service
+    dc = domainCat()
+    dc.run(domain)
