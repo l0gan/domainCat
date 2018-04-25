@@ -68,7 +68,9 @@ class domainCat:
         print "Coming Soon"
 
     def ciscoCheck(self, domain):
-        print "Coming Soon"
+        print "\033[1;34m[*] Targeting Cisco Talos\033[0;0m"
+        xf = ciscotalos.CiscoTalos()
+        xf.check_category(domain)
 
     def asciiArt(self):
         print('''                                            ooooo$oo
