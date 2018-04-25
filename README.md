@@ -101,10 +101,12 @@ python domainCat.py
 ```
 
 ## Roadmap
-- Add in support for Google Safebrowsing, PhishTank, and Cisco Talos checks
+- Add in support for Google Safebrowsing, PhishTank
 - Update to python3
 
 ### Some code borrowed from these awesome projects:
-Domain Hunter: https://github.com/threatexpress/domainhunter 
+Domain Hunter: https://github.com/threatexpress/domainhunter
+
 CatMyPhish: https://github.com/Mr-Un1k0d3r/CatMyFish 
+
 Chameleon: https://github.com/mdsecactivebreach/Chameleon
