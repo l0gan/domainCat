@@ -1,60 +1,19 @@
 ```
-                                            ooooo$oo
-                                         oo$$$$$$$$$$$o
-                           """"oooo    $$$$$$$$$$$$$$$$
-                               " """$$$$$o$$$$$""$$$$$"
-               ooo o      ooooo      "   o$$$   o$$$$$
-               " ooo $oo$$$$$$$$$$$oo    ""    o$$$$"
-        ooooooo$"" $$$""        """$$$o     $$$$$$$
-    oo$$$$$""""ooo$""                ""       o$$$$
-   $$$$$$$$  oo$$$"       ooo$ooo          o$$$$$$$
-   ""$$$$oo"""""        o$$$$$$$$$$ooo   o$""""   "$
-       ""              $$$$""      """"            $$
-       o$$           o$$$                o o  o    $$$  o$"
-        o$         $$$$               ooo "o$ $$oo$$$$$  o$"
-        $ oooo$o$$$$$$"        oo$$$$$$$$$$oo$$$$$$o$" o$"
-        $$$      "" "         $$$$""""$$$ "$$$        $  ooo$$$""""
-       o$"                  o$$"       $"   "         ""   $"
-        $$   oo       o    $$" oo """                       """oooo
-         $oo$$$$oo    "  o$$$$$o " o                             o$$$o
-         "$$$$"  "$$$$$$""""                                 "$o
-         $$$"      ""$$o oo                 $ "                 "$o
-     ooo   $"$o oo$ o$$$"""""""$$o      """$$$o              $o""""$$o
-       """"$$ ""$"o$$""   oooo "$$o        "  "               "o
-    "  oooo "    $$" ooo$$$$$$oo$$$       o        ooooo   oo  ""oo
-    oo$"""       $$o$$$$$$$$$$$$$"       $"       $$$$$$$$o$ "$o  "
-ooo$oooooo       "$$$$$$$$$$$$$""      o"      oo$$""""""""$o  "
- "     $$$"        "$$$$$$$$$""       o        "$$        o$$o
-     oo"" o o    oo   """"        o ""        o o$o    o$$$$$$$
-   o$$o"" "$"      $ooo       o$""           o$$$"   o$$$$$$$$$o
-   "     oo            " """ "             o"$$$"  o$$$""""    $$o
-        o$o$"  o                         o$  $$o  o$$"          $$
-        ""    $" oo  o o o          oooo$$"    $  $"          oo$$$
-             o$o$$$oo"oo ""$$$o$$$$$$$$"       $ ""        o$$$$$$$$o
-             $$$$$$$$$$ooo  """""""""          $o$o     oo$$$$$$$$"$$o
-             "$$$$$$$$$$$                     $"o$$   o$$$$$$$$""   $$o
-              $     "$ $$o$ooo$$$$o           " $$"  "$$$$""         $$
-             $"    oo$o$$$"""      "$$o          oo$   $             "$
-             $"   o""" "$o            $o        "$ $oo$$$             $$
-            o$$$$$       $$             "$o        $""" $$o$$$$$$$$$$$$$$o
-            $$$$$$       $o               "$o      $oo  $$$$$$""$""$"$"$$$$
-           "$$$" $$oooo$$"                  $$$o      ooo$$            $$$
-            $"  $$ ""$$                    oo "$$$ooo$$$$$$$$$$$$$oo    $$
-            $   $    $"      o          $$$  ""$$$$  $$$$$$$$oo """$$$$o$$$
-           $$  $$   $$      $$         $$""$o  $$$$  "$$$  $$$$o   "$$$$$$$
-           $$$$$$$$ $$     o$$       $$    "$$ "$"     $$$    "$$     "$$$$
-           $$""   $$$$o     $$       $"     $$ $$      $$$$    "$$     $$$$
-          """  oo$$$ "$    o$$o      $"     $$ o$"     $$$$     ""$    "$$$
-          $    $$$$$o "$o o$""$o    $$     o"  $$oo    $$$$       $      $$"
-          $   o$  "$$oo""""   ""$oo$"      "oo"""""""o$$$$o        o      ""
-          $   $$   "$$$$oo$o            o o$$"         $" $$$oo    $      $
-         o$   "$o    """"$$"""$"""""""""""""           $$$"""""" oo""  oo$"
-         $$ o  $$o     o$$"   $                        """       ""  $"$$$
-          "$$$o$$$$oooo""    o$                         $o"$            $$o
-            "$o$""$" "       $$$                           ooo$oo$$$$$$$$$$
-                               "                           """"""""$$$$$$$$
-                              o                           o            ""$$
-                              "                           "               "
+   _
+  ( \                ..-----..__
+   \.'.        _.--'`  [   '  ' ```'-._
+    `. `'-..-'' `    '  ' '   .  ;   ; `-'''-.,__/|/_
+      `'-.;..-''`|'  `.  '.    ;     '  `    '   `'  `,
+                 \ '   .    ' .     '   ;   .`   . ' 7 \
+                  '.' . '- . \    .`   .`  .   .\     `Y
+                    '-.' .   ].  '   ,    '    /'`""';:'
+                      /Y   '.] '-._ /    ' _.-'
+                      \'\_   ; (`'.'.'  ."/
+                       ' )` /  `.'   .-'.'
+                        '\  \).'  .-'--"
+                          `. `,_'`
+                            `.__)  
+
 ```
 # domainCat
 Domain Categorization Checking
@@ -78,26 +37,46 @@ optional arguments:
 ```
 Running:
 ```
-python domainCat.py
-[*] Enter Domain name to check Categorization on: <domain>
+python domainCat.py --domain example.com
+
+   _
+  ( \                ..-----..__
+   \.'.        _.--'`  [   '  ' ```'-._
+    `. `'-..-'' `    '  ' '   .  ;   ; `-'''-.,__/|/_
+      `'-.;..-''`|'  `.  '.    ;     '  `    '   `'  `,
+                 \ '   .    ' .     '   ;   .`   . ' 7 \
+                  '.' . '- . \    .`   .`  .   .\     `Y
+                    '-.' .   ].  '   ,    '    /'`""';:'
+                      /Y   '.] '-._ /    ' _.-'
+                      \'\_   ; (`'.'.'  ."/
+                       ' )` /  `.'   .-'.'
+                        '\  \).'  .-'--"
+                          `. `,_'`
+                            `.__)  
+     domainCat - Domain Categorization Discovery at it's finest
+     written by: l0gan
+[*] Targeting Bluecoat WebPulse
+[*] Checking category for example.com
+[!] Site categorized as: Technology/Internet
+[*] Targeting Fortiguard
+[*] Checking category for example.com
+[!] Site categorized as: Information Technology
+[*] Targeting IBM Xforce
+[*] IBM xForce Check: example.com
+[!] Site categorized as: 
 [*] Targeting McAfee Trustedsource
 [-] Getting anti-automation tokens
-[*] Checking category for <domain>
-[!] Found category: - Business- Software/Hardware
-[*] Targeting Bluecoat WebPulse
-[*] Checking category for <domain>
-[!] Your site is categorised as: Computer/Information Security
-[*] Targeting IBM Xforce
-[*] IBM xForce Check: <domain>
-[!] Domain categorised as IT Security / IT Information
-[*] Targeting Fortiguard
-[*] Checking category for <domain>
-[!] Your site is categorised as: Information Technology
+[*] Checking category for example.com
+[!] Site categorized as: - Technical Information
 [*] Targeting Websense
 [-] Checking if you have any requests for the day.
-[-] You have 1 requests left for the day.
-[*] Checking category for <domain>
-[!] Your site is categorised as: Information Technology
+[-] You have 2 requests left for the day.
+[*] Checking category for example.com
+[!] Site categorized as: Information Technology
+[*] Targeting Cisco Talos
+[*] Checking category for example.com
+[!] Site categorized as: Reference
+
 ```
 
 ## Roadmap
