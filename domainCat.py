@@ -4,7 +4,7 @@ import sys
 from modules import *
 
 parser = ArgumentParser(description='Domain Categorization Checking')
-parser.add_argument('--domain', '-d', help='Domain name to lookup')
+parser.add_argument('--domain', '-d', required=True, help='Domain name to lookup')
 parser.add_argument('--service', '-s', nargs='?', const='a', help='Service to check Categorization against (Defaults to ALL) (a (ALL), b (Bluecoat), f (Fortiguard), i (IBM xForce), m (McAfee TrustedForce), w (WebSense), g (Google SafeBrowsing), p (PhishTank), c (Cisco Talos))')
 
 class domainCat:
@@ -73,64 +73,23 @@ class domainCat:
         xf.check_category(domain)
 
     def asciiArt(self):
-        print('''                                            ooooo$oo
-                                         oo$$$$$$$$$$$o
-                           """"oooo    $$$$$$$$$$$$$$$$
-                               " """$$$$$o$$$$$""$$$$$"
-               ooo o      ooooo      "   o$$$   o$$$$$
-               " ooo $oo$$$$$$$$$$$oo    ""    o$$$$"
-        ooooooo$"" $$$""        """$$$o     $$$$$$$
-    oo$$$$$""""ooo$""                ""       o$$$$
-   $$$$$$$$  oo$$$"       ooo$ooo          o$$$$$$$
-   ""$$$$oo"""""        o$$$$$$$$$$ooo   o$""""   "$
-       ""              $$$$""      """"            $$
-       o$$           o$$$                o o  o    $$$  o$"
-        o$         $$$$               ooo "o$ $$oo$$$$$  o$"
-        $ oooo$o$$$$$$"        oo$$$$$$$$$$oo$$$$$$o$" o$"
-        $$$      "" "         $$$$""""$$$ "$$$        $  ooo$$$""""
-       o$"                  o$$"       $"   "         ""   $"
-        $$   oo       o    $$" oo """                       """oooo
-         $oo$$$$oo    "  o$$$$$o " o                             o$$$o
-         "$$$$"  "$$$$$$""""                                 "$o
-         $$$"      ""$$o oo                 $ "                 "$o
-     ooo   $"$o oo$ o$$$"""""""$$o      """$$$o              $o""""$$o
-       """"$$ ""$"o$$""   oooo "$$o        "  "               "o
-    "  oooo "    $$" ooo$$$$$$oo$$$       o        ooooo   oo  ""oo
-    oo$"""       $$o$$$$$$$$$$$$$"       $"       $$$$$$$$o$ "$o  "
-ooo$oooooo       "$$$$$$$$$$$$$""      o"      oo$$""""""""$o  "
- "     $$$"        "$$$$$$$$$""       o        "$$        o$$o
-     oo"" o o    oo   """"        o ""        o o$o    o$$$$$$$
-   o$$o"" "$"      $ooo       o$""           o$$$"   o$$$$$$$$$o
-   "     oo            " """ "             o"$$$"  o$$$""""    $$o
-        o$o$"  o                         o$  $$o  o$$"          $$
-        ""    $" oo  o o o          oooo$$"    $  $"          oo$$$
-             o$o$$$oo"oo ""$$$o$$$$$$$$"       $ ""        o$$$$$$$$o
-             $$$$$$$$$$ooo  """""""""          $o$o     oo$$$$$$$$"$$o
-             "$$$$$$$$$$$                     $"o$$   o$$$$$$$$""   $$o
-              $     "$ $$o$ooo$$$$o           " $$"  "$$$$""         $$
-             $"    oo$o$$$"""      "$$o          oo$   $             "$
-             $"   o""" "$o            $o        "$ $oo$$$             $$
-            o$$$$$       $$             "$o        $""" $$o$$$$$$$$$$$$$$o
-            $$$$$$       $o               "$o      $oo  $$$$$$""$""$"$"$$$$
-           "$$$" $$oooo$$"                  $$$o      ooo$$            $$$
-            $"  $$ ""$$                    oo "$$$ooo$$$$$$$$$$$$$oo    $$
-            $   $    $"      o          $$$  ""$$$$  $$$$$$$$oo """$$$$o$$$
-           $$  $$   $$      $$         $$""$o  $$$$  "$$$  $$$$o   "$$$$$$$
-           $$$$$$$$ $$     o$$       $$    "$$ "$"     $$$    "$$     "$$$$
-           $$""   $$$$o     $$       $"     $$ $$      $$$$    "$$     $$$$
-          """  oo$$$ "$    o$$o      $"     $$ o$"     $$$$     ""$    "$$$
-          $    $$$$$o "$o o$""$o    $$     o"  $$oo    $$$$       $      $$"
-          $   o$  "$$oo""""   ""$oo$"      "oo"""""""o$$$$o        o      ""
-          $   $$   "$$$$oo$o            o o$$"         $" $$$oo    $      $
-         o$   "$o    """"$$"""$"""""""""""""           $$$"""""" oo""  oo$"
-         $$ o  $$o     o$$"   $                        """       ""  $"$$$
-          "$$$o$$$$oooo""    o$                         $o"$            $$o
-            "$o$""$" "       $$$                           ooo$oo$$$$$$$$$$
-                               "                           """"""""$$$$$$$$
-                              o                           o            ""$$
-                              "                           "               "
+        print("""
+   _
+  ( \                ..-----..__
+   \.'.        _.--'`  [   '  ' ```'-._
+    `. `'-..-'' `    '  ' '   .  ;   ; `-'''-.,__/|/_
+      `'-.;..-''`|'  `.  '.    ;     '  `    '   `'  `,
+                 \ '   .    ' .     '   ;   .`   . ' 7 \\
+                  '.' . '- . \    .`   .`  .   .\     `Y
+                    '-.' .   ].  '   ,    '    /'`""';:'
+                      /Y   '.] '-._ /    ' _.-'
+                      \\'\_   ; (`'.'.'  ."/
+                       ' )` /  `.'   .-'.'
+                        '\  \).'  .-'--"
+                          `. `,_'`
+                            `.__)  
      domainCat - Domain Categorization Discovery at it's finest
-     written by: l0gan''')
+     written by: l0gan""")
 
 if __name__ == "__main__":
     args = parser.parse_args()
