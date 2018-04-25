@@ -9,24 +9,24 @@ parser.add_argument('--service', '-s', nargs='?', const='a', help='Service to ch
 
 class domainCat:
 
-    def run(self, domain):
-        if args.service == 'b':
+    def run(self, domain, service):
+        if service == 'b':
             self.bluecoatCheck(domain)
-        elif args.service == 'f':
+        elif service == 'f':
             self.fortiguardCheck(domain)
-        elif args.service == 'i':
+        elif service == 'i':
             self.ibmCheck(domain)
-        elif args.service == 'm':
+        elif service == 'm':
             self.trustedsourceCheck(domain)
-        elif args.service == 'w':
+        elif service == 'w':
             self.websenseCheck(domain)
-        elif args.service == 'g':
+        elif service == 'g':
             self.googleCheck(domain)
-        elif args.service == 'p':
+        elif service == 'p':
             self.phishtankCheck(domain)
-        elif args.service == 'c':
+        elif service == 'c':
             self.ciscoCheck(domain)
-        elif args.service == 'a':
+        elif service == 'a':
             self.bluecoatCheck(domain)
             self.fortiguardCheck(domain)
             self.ibmCheck(domain)
@@ -138,5 +138,7 @@ if __name__ == "__main__":
     #domain = raw_input("[*] Enter Domain name to check Categorization on: ")
     domain = args.domain
     service = args.service
+    if not service:
+        service = 'a'
     dc = domainCat()
-    dc.run(domain)
+    dc.run(domain, service)
