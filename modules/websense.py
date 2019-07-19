@@ -23,11 +23,11 @@ class Websense:
 
 
     def check_category(self, domain):
-        print "[-] Checking if you have any requests for the day."
+        print("[-] Checking if you have any requests for the day.")
         num_remaining = self.req_check()
-        print "[-] You have " + num_remaining + " requests left for the day."
+        print("[-] You have " + num_remaining + " requests left for the day.")
         if int(num_remaining) > 0:
-            print "[*] Checking category for " + domain
+            print("[*] Checking category for " + domain)
             request = urllib2.Request("https://csi.forcepoint.com")
             data = urllib.urlencode({"LookupUrl":domain})
             request.add_header("User-Agent", "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)")
@@ -38,10 +38,10 @@ class Websense:
                 cat = location[2]
                 print("\033[1;32m[!] Site categorized as: " + cat + "\033[0;0m")
             except Exception as e:
-                print "[-] An error occurred"
-                print e
+                print("[-] An error occurred")
+                print(e)
         else:
-            print "[-] No requests remaining for this IP."
+            print("[-] No requests remaining for this IP.")
 
 
 if __name__ == "__main__":

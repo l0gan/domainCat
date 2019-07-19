@@ -34,51 +34,51 @@ class domainCat:
             self.ibmCheck(domain)
             self.trustedsourceCheck(domain)
             self.websenseCheck(domain)
-            self.googleCheck(domain)
-            self.phishtankCheck(domain)
+            # self.googleCheck(domain)
+            # self.phishtankCheck(domain)
             self.ciscoCheck(domain)
 
 
     def trustedsourceCheck(self, domain):
-        print "\033[1;34m[*] Targeting McAfee Trustedsource\033[0;0m"
+        print("\033[1;34m[*] Targeting McAfee Trustedsource\033[0;0m")
         ts = trustedsource.TrustedSource()
         ts.check_category(domain)
 
 
     def bluecoatCheck(self, domain):
-        print "\033[1;34m[*] Targeting Bluecoat WebPulse\033[0;0m"
+        print("\033[1;34m[*] Targeting Bluecoat WebPulse\033[0;0m")
         b = bluecoat.Bluecoat()
         b.check_category(domain)
 
 
     def ibmCheck(self, domain):
-        print "\033[1;34m[*] Targeting IBM Xforce\033[0;0m"
+        print("\033[1;34m[*] Targeting IBM Xforce\033[0;0m")
         xf = ibmxforce.IBMXforce()
         xf.checkIBMxForce(domain)
 
 
     def fortiguardCheck(self, domain):
-        print "\033[1;34m[*] Targeting Fortiguard\033[0;0m"
+        print("\033[1;34m[*] Targeting Fortiguard\033[0;0m")
         xf = fortiguard.Fortiguard()
         xf.check_category(domain)
 
 
     def websenseCheck(self, domain):
-        print "\033[1;34m[*] Targeting Websense\033[0;0m"
+        print("\033[1;34m[*] Targeting Websense\033[0;0m")
         xf = websense.Websense()
         xf.check_category(domain)
 
 
-    def googleCheck(self, domain):
-        print "Coming Soon"
+    # def googleCheck(self, domain):
+        # print("Coming Soon")
 
 
-    def phishtankCheck(self, domain):
-        print "Coming Soon"
+    # def phishtankCheck(self, domain):
+        # print("Coming Soon")
 
 
     def ciscoCheck(self, domain):
-        print "\033[1;34m[*] Targeting Cisco Talos\033[0;0m"
+        print("\033[1;34m[*] Targeting Cisco Talos\033[0;0m")
         xf = ciscotalos.CiscoTalos()
         xf.check_category(domain)
 
