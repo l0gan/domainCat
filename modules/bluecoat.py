@@ -1,15 +1,6 @@
 import urllib2
-import urllib
 import sys
-import re
-import requests
-from urlparse import urlparse
-from bs4 import BeautifulSoup
 import json
-import threading
-import SocketServer
-import SimpleHTTPServer
-import time
 
 
 class Bluecoat:
@@ -40,5 +31,5 @@ class Bluecoat:
 
 if __name__ == "__main__":
     domain = sys.argv[1]
-    b = Bluecoat(domain)
-    b.check_category()
+    b = Bluecoat()
+    b.check_category(domain)

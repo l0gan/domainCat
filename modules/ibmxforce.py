@@ -39,5 +39,5 @@ class IBMXforce:
 
 if __name__ == "__main__":
     domain = sys.argv[1]
-    xf = IBMXforce(domain)
-    xf.checkIBMxForce()
+    xf = IBMXforce()
+    xf.checkIBMxForce(domain)

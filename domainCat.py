@@ -1,12 +1,14 @@
 #!/usr/bin/env python2
+
 from argparse import ArgumentParser
-import argparse
 import sys
 from modules import *
 
 parser = ArgumentParser(description='Domain Categorization Checking')
 parser.add_argument('--domain', '-d', required=True, help='Domain name to lookup')
-parser.add_argument('--service', '-s', nargs='?', const='a', help='Service to check Categorization against (Defaults to ALL) (a (ALL), b (Bluecoat), f (Fortiguard), i (IBM xForce), m (McAfee TrustedForce), w (WebSense), g (Google SafeBrowsing), p (PhishTank), c (Cisco Talos))')
+parser.add_argument('--service', '-s', nargs='?', const='a', help='Service to check Categorization against \
+                    (Defaults to ALL) (a (ALL), b (Bluecoat), f (Fortiguard), i (IBM xForce), m (McAfee TrustedForce), \
+                    w (WebSense), g (Google SafeBrowsing), p (PhishTank), c (Cisco Talos))')
 
 
 class domainCat:
@@ -22,10 +24,10 @@ class domainCat:
             self.trustedsourceCheck(domain)
         elif service == 'w':
             self.websenseCheck(domain)
-        elif service == 'g':
-            self.googleCheck(domain)
-        elif service == 'p':
-            self.phishtankCheck(domain)
+        # elif service == 'g':
+            # self.googleCheck(domain)
+        # elif service == 'p':
+            # self.phishtankCheck(domain)
         elif service == 'c':
             self.ciscoCheck(domain)
         elif service == 'a':
@@ -106,7 +108,6 @@ class domainCat:
 if __name__ == "__main__":
     args = parser.parse_args()
     domainCat().asciiArt()
-    #domain = raw_input("[*] Enter Domain name to check Categorization on: ")
     domain = args.domain
     service = args.service
     if not service:

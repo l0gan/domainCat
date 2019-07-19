@@ -1,15 +1,6 @@
 import urllib2
-import urllib
-import requests
 import sys
 import re
-from urlparse import urlparse
-from bs4 import BeautifulSoup
-import json
-import threading
-import SocketServer
-import SimpleHTTPServer
-import time
 
 
 class Fortiguard:

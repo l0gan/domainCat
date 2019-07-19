@@ -1,9 +1,7 @@
-import requests
 import sys
 import time
-import urllib
 from bs4 import BeautifulSoup
-
+import requests
 
 class TrustedSource:
     def check_category(self, domain):
