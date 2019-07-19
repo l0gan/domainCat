@@ -18,6 +18,12 @@
 # domainCat
 Domain Categorization Checking
 
+## Requirements
+```
+pip3 install bs4
+pip3 install requests
+```
+
 ## Use
 Help:
 ```
@@ -37,7 +43,7 @@ optional arguments:
 ```
 Running:
 ```
-python domainCat.py --domain example.com
+python3 domainCat.py --domain example.com
 
    _
   ( \                ..-----..__
@@ -81,7 +87,6 @@ python domainCat.py --domain example.com
 
 ## Roadmap
 - Add in support for Google Safebrowsing, PhishTank
-- Update to python3
 
 ### Some code borrowed from these awesome projects:
 Domain Hunter: https://github.com/threatexpress/domainhunter
