@@ -32,9 +32,10 @@ class IBMXforce:
             print "\033[1;32m[!] Site categorized as: {}\033[0;0m"\
                 .format(" | ".join(responseJson["result"].get('cats', {}).keys()))
 
-        except Exception as e:            
+        except Exception as e:
             print('[-] Error retrieving IBM x-Force reputation!')
             return "-"
+
 
 if __name__ == "__main__":
     domain = sys.argv[1]

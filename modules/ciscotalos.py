@@ -1,4 +1,3 @@
-
 import urllib2
 import urllib
 import requests
@@ -13,6 +12,7 @@ import SimpleHTTPServer
 import time
 import pprint
 
+
 class CiscoTalos:
     def check_category(self, domain):
             print "[*] Checking category for " + domain
@@ -21,13 +21,14 @@ class CiscoTalos:
             request.add_header("Referer", "https://www.talosintelligence.com/reputation_center/lookup?search=" + domain)
             response = urllib2.urlopen(request)
             try:
-		jsonChk = json.loads(response.read())
+                jsonChk = json.loads(response.read())
                 categorydict = jsonChk.get("category")
                 cat = categorydict.get("description")
                 print("\033[1;32m[!] Site categorized as: " + cat + "\033[0;0m")
             except Exception as e:
-			print "[-] An error occurred"
-                        print e
+                print "[-] An error occurred"
+                print e
+
 
 if __name__ == "__main__":
     domain = sys.argv[1]

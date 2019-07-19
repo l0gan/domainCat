@@ -4,6 +4,7 @@ import time
 import urllib
 from bs4 import BeautifulSoup
 
+
 class TrustedSource:
     def check_category(self, domain):
         print "[-] Getting anti-automation tokens"
@@ -32,6 +33,7 @@ class TrustedSource:
         results_table = bs.find("table", { "class" : "result-table" })
         td = results_table.find_all('td')
         print "\033[1;32m[!] Site categorized as: " + td[len(td)-2].text + "\033[0;0m"
+
 
 if __name__ == "__main__":
     domain = sys.argv[1]

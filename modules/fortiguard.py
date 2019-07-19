@@ -1,4 +1,3 @@
-
 import urllib2
 import urllib
 import requests
@@ -26,8 +25,9 @@ class Fortiguard:
             cat = re.findall('Category: (.*?)" />', resp, re.DOTALL)
             print "\033[1;32m[!] Site categorized as: " + cat[0] + "\033[0;0m"
         except Exception as e:
-			print "[-] An error occurred"
-                        print e
+            print "[-] An error occurred"
+            print e
+
 
 if __name__ == "__main__":
     domain = sys.argv[1]

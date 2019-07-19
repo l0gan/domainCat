@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 from argparse import ArgumentParser
 import argparse
 import sys
@@ -6,6 +7,7 @@ from modules import *
 parser = ArgumentParser(description='Domain Categorization Checking')
 parser.add_argument('--domain', '-d', required=True, help='Domain name to lookup')
 parser.add_argument('--service', '-s', nargs='?', const='a', help='Service to check Categorization against (Defaults to ALL) (a (ALL), b (Bluecoat), f (Fortiguard), i (IBM xForce), m (McAfee TrustedForce), w (WebSense), g (Google SafeBrowsing), p (PhishTank), c (Cisco Talos))')
+
 
 class domainCat:
 
@@ -36,41 +38,50 @@ class domainCat:
             self.phishtankCheck(domain)
             self.ciscoCheck(domain)
 
+
     def trustedsourceCheck(self, domain):
         print "\033[1;34m[*] Targeting McAfee Trustedsource\033[0;0m"
         ts = trustedsource.TrustedSource()
         ts.check_category(domain)
+
 
     def bluecoatCheck(self, domain):
         print "\033[1;34m[*] Targeting Bluecoat WebPulse\033[0;0m"
         b = bluecoat.Bluecoat()
         b.check_category(domain)
 
+
     def ibmCheck(self, domain):
         print "\033[1;34m[*] Targeting IBM Xforce\033[0;0m"
         xf = ibmxforce.IBMXforce()
         xf.checkIBMxForce(domain)
+
 
     def fortiguardCheck(self, domain):
         print "\033[1;34m[*] Targeting Fortiguard\033[0;0m"
         xf = fortiguard.Fortiguard()
         xf.check_category(domain)
 
-    def websenseCheck(self, domain):            
+
+    def websenseCheck(self, domain):
         print "\033[1;34m[*] Targeting Websense\033[0;0m"
         xf = websense.Websense()
         xf.check_category(domain)
 
+
     def googleCheck(self, domain):
         print "Coming Soon"
 
+
     def phishtankCheck(self, domain):
         print "Coming Soon"
+
 
     def ciscoCheck(self, domain):
         print "\033[1;34m[*] Targeting Cisco Talos\033[0;0m"
         xf = ciscotalos.CiscoTalos()
         xf.check_category(domain)
+
 
     def asciiArt(self):
         print("""
@@ -87,9 +98,10 @@ class domainCat:
                        ' )` /  `.'   .-'.'
                         '\  \).'  .-'--"
                           `. `,_'`
-                            `.__)  
+                            `.__)
      domainCat - Domain Categorization Discovery at it's finest
      written by: l0gan""")
+
 
 if __name__ == "__main__":
     args = parser.parse_args()
@@ -101,3 +113,4 @@ if __name__ == "__main__":
         service = 'a'
     dc = domainCat()
     dc.run(domain, service)
+
