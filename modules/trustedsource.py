@@ -20,7 +20,7 @@ class TrustedSource:
         e = form.find("input", {'name': 'e'}).get('value')
         c = form.find("input", {'name': 'c'}).get('value')
 
-        print("[*] Checking category for " + domain)
+        print(("[*] Checking category for " + domain))
         headers['Referer'] = base_check
         session.headers.update(headers)
         payload = {'sid':(None, ''), 'e':(None, e), 'c':(None, c), 'p':(None, ''),  'action':(None,'checksingle'),'product':(None,'13-ts-3'), 'url':(None, domain)}
@@ -30,7 +30,7 @@ class TrustedSource:
         sid = form.find("input", {'name': 'sid'}).get('value')
         results_table = bs.find("table", { "class" : "result-table" })
         td = results_table.find_all('td')
-        print("\033[1;32m[!] Site categorized as: " + td[len(td)-2].text + "\033[0;0m")
+        print(("\033[1;32m[!] Site categorized as: " + td[len(td)-2].text + "\033[0;0m"))
 
 
 if __name__ == "__main__":

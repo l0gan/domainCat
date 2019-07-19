@@ -6,7 +6,7 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 class IBMXforce:
     def checkIBMxForce(self, domain):
-        print('[*] IBM xForce Check: {}'.format(domain))
+        print(('[*] IBM xForce Check: {}'.format(domain)))
         s = requests.Session()
         # Hack to prevent cert warnings
         requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -29,8 +29,8 @@ class IBMXforce:
 
             responseJson = json.loads(response.text)
 
-            print("\033[1;32m[!] Site categorized as: {}\033[0;0m"\
-                .format(" | ".join(responseJson["result"].get('cats', {}).keys())))
+            print(("\033[1;32m[!] Site categorized as: {}\033[0;0m"\
+                .format(" | ".join(list(responseJson["result"].get('cats', {}).keys())))))
 
         except Exception as e:
             print('[-] Error retrieving IBM x-Force reputation!')

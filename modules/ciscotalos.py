@@ -1,30 +1,30 @@
-import urllib2
-import urllib
+import urllib.request, urllib.error, urllib.parse
+import urllib.request, urllib.parse, urllib.error
 import requests
 import sys
 import re
-from urlparse import urlparse
+from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 import json
 import threading
-import SocketServer
-import SimpleHTTPServer
+import socketserver
+import http.server
 import time
 import pprint
 
 
 class CiscoTalos:
     def check_category(self, domain):
-            print("[*] Checking category for " + domain)
-            request = urllib2.Request("https://talosintelligence.com/sb_api/query_lookup?query=%2Fapi%2Fv2%2Fdetails%2Fdomain%2F&query_entry=" + domain + "&offset=0&order=ip+asc")
+            print(("[*] Checking category for " + domain))
+            request = urllib.request.Request("https://talosintelligence.com/sb_api/query_lookup?query=%2Fapi%2Fv2%2Fdetails%2Fdomain%2F&query_entry=" + domain + "&offset=0&order=ip+asc")
             request.add_header("User-Agent", "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)")
             request.add_header("Referer", "https://www.talosintelligence.com/reputation_center/lookup?search=" + domain)
-            response = urllib2.urlopen(request)
+            response = urllib.request.urlopen(request)
             try:
                 jsonChk = json.loads(response.read())
                 categorydict = jsonChk.get("category")
                 cat = categorydict.get("description")
-                print("\033[1;32m[!] Site categorized as: " + cat + "\033[0;0m")
+                print(("\033[1;32m[!] Site categorized as: " + cat + "\033[0;0m"))
             except Exception as e:
                 print("[-] An error occurred")
                 print(e)
