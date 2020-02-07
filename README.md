@@ -27,7 +27,8 @@ pip3 install requests
 ## Use
 Help:
 ```
-usage: domainCat.py [-h] [--domain DOMAIN] [--service SERVICE]
+usage: domainCat.py [-h] [--domain DOMAIN] [--service [SERVICE]]
+                    [--domain-list DOMAIN_LIST] [--quiet]
 
 Domain Categorization Checking
 
@@ -35,11 +36,15 @@ optional arguments:
   -h, --help            show this help message and exit
   --domain DOMAIN, -d DOMAIN
                         Domain name to lookup
-  --service SERVICE, -s SERVICE
+  --service [SERVICE], -s [SERVICE]
                         Service to check Categorization against (Defaults to
                         ALL) (a (ALL), b (Bluecoat), f (Fortiguard), i (IBM
                         xForce), m (McAfee TrustedForce), w (WebSense), g
                         (Google SafeBrowsing), p (PhishTank), c (Cisco Talos))
+  --domain-list DOMAIN_LIST, -l DOMAIN_LIST
+                        List of domains
+  --quiet, -q           Suppress domainCat logo
+
 ```
 Running:
 ```
