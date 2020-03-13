@@ -6,8 +6,10 @@ import sys
 from modules import *
 
 parser = ArgumentParser(description='Domain Categorization Checking')
-parser.add_argument('--domain', '-d', required=True, help='Domain name to lookup')
+parser.add_argument('--domain', '-d', required=False, help='Domain name to lookup')
 parser.add_argument('--service', '-s', nargs='?', const='a', help='Service to check Categorization against (Defaults to ALL) (a (ALL), b (Bluecoat), f (Fortiguard), i (IBM xForce), m (McAfee TrustedForce), w (WebSense), g (Google SafeBrowsing), p (PhishTank), c (Cisco Talos))')
+parser.add_argument('--domain-list', '-l', required=False, help='List of domains')
+parser.add_argument('--quiet', '-q', required=False, action='store_true', help='Suppress domainCat logo')
 
 class domainCat:
 
@@ -26,8 +28,8 @@ class domainCat:
             self.googleCheck(domain)
         elif service == 'p':
             self.phishtankCheck(domain)
-        elif service == 'c':
-            self.ciscoCheck(domain)
+        #elif service == 'c':
+            #self.ciscoCheck(domain)
         elif service == 'a':
             self.bluecoatCheck(domain)
             self.fortiguardCheck(domain)
@@ -36,7 +38,7 @@ class domainCat:
             self.websenseCheck(domain)
             #self.googleCheck(domain)
             #self.phishtankCheck(domain)
-            self.ciscoCheck(domain)
+            #self.ciscoCheck(domain)
 
     def trustedsourceCheck(self, domain):
         print("\033[1;34m[*] Targeting McAfee Trustedsource\033[0;0m")
@@ -94,13 +96,22 @@ class domainCat:
      written by: l0gan""")
 
 if __name__ == "__main__":
+    dc = domainCat()
     args = parser.parse_args()
-    domainCat().asciiArt()
-    #domain = raw_input("[*] Enter Domain name to check Categorization on: ")
-    domain = args.domain
+
+    quiet = args.quiet
+    if not quiet:
+        domainCat().asciiArt()
+    
     service = args.service
     if not service:
         service = 'a'
-    dc = domainCat()
-    dc.run(domain, service)
 
+    dList = args.domain_list
+    if not dList:
+        domain = args.domain
+        dc.run(domain, service)
+    else:
+        f = open(dList, 'r')
+        for domain in f:
+            dc.run(domain, service)
