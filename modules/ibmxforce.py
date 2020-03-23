@@ -31,6 +31,7 @@ class IBMXforce:
 
             print("\033[1;32m[!] Site categorized as: {}\033[0;0m"\
                 .format(" | ".join(responseJson["result"].get('cats', {}).keys())))
+            return " | ".join(responseJson["result"].get('cats', {}).keys())
 
         except Exception as e:            
             print('[-] Error retrieving IBM x-Force reputation!')

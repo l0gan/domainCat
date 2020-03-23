@@ -32,6 +32,7 @@ class TrustedSource:
         results_table = bs.find("table", { "class" : "result-table" })
         td = results_table.find_all('td')
         print("\033[1;32m[!] Site categorized as: " + td[len(td)-2].text + "\033[0;0m")
+        return td[len(td)-2].text
 
 if __name__ == "__main__":
     domain = sys.argv[1]
