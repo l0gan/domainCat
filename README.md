@@ -28,7 +28,7 @@ pip3 install requests
 Help:
 ```
 usage: domainCat.py [-h] [--domain DOMAIN] [--service [SERVICE]]
-                    [--domain-list DOMAIN_LIST] [--quiet]
+                    [--domain-list DOMAIN_LIST] [--quiet] [--output OUTPUT]
 
 Domain Categorization Checking
 
@@ -44,7 +44,8 @@ optional arguments:
   --domain-list DOMAIN_LIST, -l DOMAIN_LIST
                         List of domains
   --quiet, -q           Suppress domainCat logo
-
+  --output OUTPUT, -o OUTPUT
+                        Output file as CSV
 ```
 Running:
 ```
