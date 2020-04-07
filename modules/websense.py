@@ -35,6 +35,7 @@ class Websense:
                 location = re.findall('<td class="classAction">(.*?)</td>',resp,re.DOTALL)
                 cat = location[2]
                 print("\033[1;32m[!] Site categorized as: " + cat + "\033[0;0m")
+                return cat
             except Exception as e:
                 print("[-] An error occurred")
                 print(e)
