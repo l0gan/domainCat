@@ -18,6 +18,18 @@
 # domainCat
 Domain Categorization Checking
 
+## Docker:
+1. Save Dockerfile
+2. Build Image
+```
+docker build -t domaincat .
+```
+3. Run Container
+```
+docker run --rm -it domaincat --help
+```
+
+
 ## Requirements
 ```
 pip3 install bs4
