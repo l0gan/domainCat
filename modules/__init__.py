@@ -1,1 +1,1 @@
-__all__ = ['bluecoat', 'trustedsource', 'ibmxforce', 'fortiguard', 'websense', 'ciscotalos']
+__all__ = ['bluecoat', 'trustedsource', 'ibmxforce', 'fortiguard', 'websense', 'ciscotalos', 'expireddomfilter', 'setcat']

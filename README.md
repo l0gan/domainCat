@@ -27,8 +27,8 @@ pip3 install requests
 ## Use
 Help:
 ```
-usage: domainCat.py [-h] [--domain DOMAIN] [--service [SERVICE]]
-                    [--domain-list DOMAIN_LIST] [--quiet]
+usage: domainCat.py [-h] [--domain DOMAIN] [--service [SERVICE]] [--domain-list DOMAIN_LIST] [--quiet]
+                    [--expired_domain] [--filters FILTERS] [--set_cat]
 
 Domain Categorization Checking
 
@@ -37,13 +37,17 @@ optional arguments:
   --domain DOMAIN, -d DOMAIN
                         Domain name to lookup
   --service [SERVICE], -s [SERVICE]
-                        Service to check Categorization against (Defaults to
-                        ALL) (a (ALL), b (Bluecoat), f (Fortiguard), i (IBM
-                        xForce), m (McAfee TrustedForce), w (WebSense), g
-                        (Google SafeBrowsing), p (PhishTank), c (Cisco Talos))
+                        Service to check Categorization against (Defaults to ALL) (a (ALL), b (Bluecoat), f
+                        (Fortiguard), i (IBM xForce), m (McAfee TrustedForce), w (WebSense), g (Google
+                        SafeBrowsing), p (PhishTank), c (Cisco Talos))
   --domain-list DOMAIN_LIST, -l DOMAIN_LIST
                         List of domains
   --quiet, -q           Suppress domainCat logo
+  --expired_domain, -e  Check category on top domains on expireddomains.net (use with -f)
+  --filters FILTERS, -f FILTERS
+                        Domain Keyword to search on expireddomains.net
+  --set_cat             Show how to set categorization for each service.
+  
 
 ```
 Running:
