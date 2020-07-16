@@ -1,4 +1,3 @@
-
 import urllib
 import requests
 import sys
@@ -7,7 +6,6 @@ from bs4 import BeautifulSoup
 import json
 import threading
 import time
-
 
 class Bluecoat:
     def check_category(self, domain):
@@ -28,6 +26,7 @@ class Bluecoat:
             resp = response.text
             cat = re.findall('<name>(.*?)</name></categorization></categorization>', resp, re.DOTALL)
             print("\033[1;32m[!] Site categorized as: " + cat[0] + "\033[0;0m")
+            return cat[0]
         except Exception as e:
             print("[-] An error occurred")
             print(e)

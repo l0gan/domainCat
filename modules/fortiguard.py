@@ -21,6 +21,7 @@ class Fortiguard:
             resp = response.read().decode('utf-8')
             cat = re.findall('Category: (.*?)" />', resp, re.DOTALL)
             print("\033[1;32m[!] Site categorized as: " + cat[0] + "\033[0;0m")
+            return cat[0]
         except Exception as e:
             print("[-] An error occurred")
             print(e)

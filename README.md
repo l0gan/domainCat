@@ -28,7 +28,7 @@ pip3 install requests
 Help:
 ```
 usage: domainCat.py [-h] [--domain DOMAIN] [--service [SERVICE]] [--domain-list DOMAIN_LIST] [--quiet]
-                    [--expired_domain] [--filters FILTERS] [--set_cat]
+                    [--expired_domain] [--filters FILTERS] [--set_cat] [--output OUTPUT]
 
 Domain Categorization Checking
 
@@ -47,8 +47,8 @@ optional arguments:
   --filters FILTERS, -f FILTERS
                         Domain Keyword to search on expireddomains.net
   --set_cat             Show how to set categorization for each service.
-  
-
+  --output OUTPUT, -o OUTPUT
+                        Output file as CSV
 ```
 Running:
 ```
