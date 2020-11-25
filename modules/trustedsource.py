@@ -31,7 +31,10 @@ class TrustedSource:
         sid = form.find("input", {'name': 'sid'}).get('value')
         results_table = bs.find("table", { "class" : "result-table" })
         td = results_table.find_all('td')
-        print("\033[1;32m[!] Site categorized as: " + td[len(td)-2].text + "\033[0;0m")
+        if td[len(td)-2].text == "":
+            print("\033[1;32m[!] Site categorized as: " + td[len(td)-3].text + "\033[0;0m")
+        else:
+            print("\033[1;32m[!] Site categorized as: " + td[len(td)-2].text + "\033[0;0m")
         return td[len(td)-2].text
 
 if __name__ == "__main__":
