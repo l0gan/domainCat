@@ -56,8 +56,11 @@ class domainCat:
               dc.writeOutput(fname, "phishtank", domain, self.phishtankCheck(domain))
             else:
               self.phishtankCheck(domain)
-        #elif service == 'c':
-            #self.ciscoCheck(domain)
+        elif service == 'c':
+            if len(fname) > 0:
+                dc.writeOutput(fname, "talos", domain, self.ciscoCheck(domain))
+            else:
+                self.ciscoCheck(domain)
         elif service == 'a':
             if len(fname) > 0:
               dc.writeOutput(fname, "bluecoat", domain, self.bluecoatCheck(domain))
@@ -65,6 +68,7 @@ class domainCat:
               dc.writeOutput(fname, "ibm xforce", domain, self.ibmCheck(domain))
               dc.writeOutput(fname, "mcafee", domain, self.trustedsourceCheck(domain))
               dc.writeOutput(fname, "websense", domain, self.websenseCheck(domain))
+              dc.writeOutput(fname, "talos", domain, self.ciscoCheck(domain))
               #dc.writeOutput(fname, "google safebrowsing", domain, self.googleCheck(domain))
               #dc.writeOutput(fname, "phishtank", domain, self.phishtankCheck(domain))
             else:
@@ -73,6 +77,7 @@ class domainCat:
               self.ibmCheck(domain)
               self.trustedsourceCheck(domain)
               self.websenseCheck(domain)
+              self.ciscoCheck(domain)
               #self.googleCheck(domain)
               #self.phishtankCheck(domain)
 
@@ -121,7 +126,7 @@ class domainCat:
     def ciscoCheck(self, domain):
         print("\033[1;34m[*] Targeting Cisco Talos\033[0;0m")
         xf = ciscotalos.CiscoTalos()
-        xf.check_category(domain)
+        return xf.check_category(domain)
         
     def expired_search(self, filename, argfilter):
         es = expireddomfilter.ExpiredDom()
